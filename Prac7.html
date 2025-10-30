@@ -1,0 +1,69 @@
+<!-- Develop and demonstrate PHP Script for the following problems:
+ a) Write a PHP Script to findout the Sum of the Individual Digits
+ -->
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Digits</title>
+</head>
+<body>
+
+  <h2>Sum of Individual Digits</h2>
+
+  <form method="post">
+    Enter a number: <input type="number" name="number">
+    <input type="submit" name="submit" value="Calculate Sum">
+  </form>
+
+  <?php
+  if (isset($_POST['submit'])) {
+    $number = $_POST['number'];
+    $sum = 0;
+    $temp = $number;
+
+    while ($temp > 0) {
+      $digit = $temp % 10;
+      $sum += $digit;
+      $temp = (int)($temp / 10);
+    }
+
+    echo "<p>Sum of digits of <strong>$number</strong> is <strong>$sum</strong>.</p>";
+  }
+  ?>
+
+</body>
+</html>
+
+
+b) Write a PHP Script to check whether the given numberis Palindrome or not
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palindrome Check</title>
+</head>
+<body>
+
+  <h2>Check Palindrome Number</h2>
+
+  <form method="post">
+    Enter a number: <input type="number" name="number">
+    <input type="submit" name="check" value="Check Palindrome">
+  </form>
+
+  <?php
+  if (isset($_POST['check'])) {
+    $number = $_POST['number'];
+    $reverse = strrev($number);
+
+    if ($number == $reverse) {
+      echo "<p><strong>$number</strong> is a Palindrome.</p>";
+    } else {
+      echo "<p><strong>$number</strong> is NOT a Palindrome.</p>";
+    }
+  }
+  ?>
+
+</body>
+</html>
+

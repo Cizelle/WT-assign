@@ -1,0 +1,65 @@
+<!-- Design the following static web pages required for an online book store web site.  -->
+
+a) HOME PAGE: The static home page must contain three frames. 
+<!DOCTYPE html>
+<html>
+<head><title>Online Book Store</title></head>
+<frameset rows="20%,80%">
+  <frame src="header.html" name="top">
+  <frameset cols="20%,80%">
+    <frame src="menu.html" name="left">
+    <frame src="login.html" name="main">
+  </frameset>
+</frameset>
+</html>
+
+c) LOGIN PAGE 
+<!DOCTYPE html>
+<html>
+<body style="text-align:center;">
+  <h2>Login</h2>
+  <form>
+    Username: <input type="text"><br><br>
+    Password: <input type="password"><br><br>
+    <input type="submit" value="Login">
+  </form>
+</body>
+</html>
+
+c) CATOLOGUE PAGE: The catalogue page should contain the details of all the books available in the web site in a table. 
+<!DOCTYPE html>
+<html>
+<body>
+  <h2 style="text-align:center;">Book Catalogue</h2>
+  <table border="1" width="80%" align="center">
+    <tr>
+      <th>ID</th><th>Title</th><th>Author</th><th>Price</th>
+    </tr>
+    <tr>
+      <td>1</td><td>Wings of Fire</td><td>APJ Abdul Kalam</td><td>$10</td>
+    </tr>
+    <tr>
+      <td>2</td><td>The Alchemist</td><td>Paulo Coelho</td><td>$15</td>
+    </tr>
+    <tr>
+      <td>3</td><td>Clean Code</td><td>Robert C. Martin</td><td>$30</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+d) REGISTRATION PAGE
+<!DOCTYPE html>
+<html>
+<body style="text-align:center;">
+  <h2>Register</h2>
+  <form>
+    Name: <input type="text"><br><br>
+    Email: <input type="email"><br><br>
+    Username: <input type="text"><br><br>
+    Password: <input type="password"><br><br>
+    Confirm Password: <input type="password"><br><br>
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>
