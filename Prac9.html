@@ -1,0 +1,90 @@
+<!-- Develop and demonstrate JavaScript with POP,UP boxes and functions for the following problems:
+a) Input: Click on Display Date button using onclick( ) function
+Output: Display date in the textbox
+b) Input: A number n obtained using prompt
+Output: Factorial of n number using alert
+c) Input: A number n obtained using prompt
+Output: A multiplication table of numbers from 1 to 10 of n using alert
+d) Input: A number n obtained using prompt and add another number using confirmOutput: Sum of the entire n numbers using alert -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Pop-up Demonstration</title>
+</head>
+<body>
+  <h2>JavaScript Pop-up Boxes & Functions</h2>
+
+  <!-- (a) Display Date -->
+  <h3>a) Display Date</h3>
+  <input type="text" id="dateBox" placeholder="Click button to display date">
+  <button onclick="showDate()">Display Date</button>
+
+  <hr>
+
+  <!-- (b) Factorial -->
+  <h3>b) Factorial using prompt & alert</h3>
+  <button onclick="factorialPrompt()">Find Factorial</button>
+
+  <hr>
+
+  <!-- (c) Multiplication Table -->
+  <h3>c) Multiplication Table using prompt & alert</h3>
+  <button onclick="multiplicationTable()">Show Table</button>
+
+  <hr>
+
+  <!-- (d) Sum using prompt, confirm & alert -->
+  <h3>d) Sum of numbers using prompt, confirm & alert</h3>
+  <button onclick="sumNumbers()">Find Sum</button>
+
+  <script>
+    // (a)
+    function showDate() {
+      document.getElementById("dateBox").value = new Date();
+    }
+
+    // (b)
+    function factorialPrompt() {
+      let n = parseInt(prompt("Enter a number to find its factorial:"));
+      if (isNaN(n) || n < 0) {
+        alert("Please enter a valid positive number!");
+        return;
+      }
+      let fact = 1;
+      for (let i = 1; i <= n; i++) fact *= i;
+      alert("Factorial of " + n + " is " + fact);
+    }
+
+    // (c)
+    function multiplicationTable() {
+      let n = parseInt(prompt("Enter a number to display its multiplication table (1–10):"));
+      if (isNaN(n)) {
+        alert("Invalid input!");
+        return;
+      }
+      let msg = "Multiplication Table of " + n + ":\n";
+      for (let i = 1; i <= 10; i++) {
+        msg += n + " × " + i + " = " + (n * i) + "\n";
+      }
+      alert(msg);
+    }
+
+    // (d)
+    function sumNumbers() {
+      let total = 0;
+      do {
+        let n = parseFloat(prompt("Enter a number to add:"));
+        if (isNaN(n)) {
+          alert("Invalid input!");
+          continue;
+        }
+        total += n;
+      } while (confirm("Do you want to add another number?"));
+      alert("The total sum of all numbers is: " + total);
+    }
+  </script>
+</body>
+</html>

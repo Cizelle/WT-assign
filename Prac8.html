@@ -1,0 +1,107 @@
+<!-- Write a program to design a simple calculator using 
+(a) JavaScript  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple JavaScript Calculator</title>
+</head>
+<body>
+
+  <h2>JavaScript Calculator</h2>
+
+  <form name="calcForm">
+    Number 1: <input type="number" name="num1"><br><br>
+    Number 2: <input type="number" name="num2"><br><br>
+
+    <button type="button" onclick="calculate('+')">Add</button>
+    <button type="button" onclick="calculate('-')">Subtract</button>
+    <button type="button" onclick="calculate('*')">Multiply</button>
+    <button type="button" onclick="calculate('/')">Divide</button>
+  </form>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function calculate(op) {
+      let n1 = parseFloat(document.calcForm.num1.value);
+      let n2 = parseFloat(document.calcForm.num2.value);
+      let result;
+
+      if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById("result").innerText = "Please enter valid numbers.";
+        return;
+      }
+
+      switch (op) {
+        case '+': result = n1 + n2; break;
+        case '-': result = n1 - n2; break;
+        case '*': result = n1 * n2; break;
+        case '/':
+          if (n2 === 0) {
+            document.getElementById("result").innerText = "Cannot divide by zero.";
+            return;
+          }
+          result = n1 / n2; break;
+        default: result = "Invalid Operation";
+      }
+
+      document.getElementById("result").innerText = "Result: " + result;
+    }
+  </script>
+
+</body>
+</html>
+
+(b) PHP
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple PHP Calculator</title>
+</head>
+<body>
+
+  <h2>PHP Calculator</h2>
+
+  <form method="post">
+    Number 1: <input type="number" name="num1" required><br><br>
+    Number 2: <input type="number" name="num2" required><br><br>
+
+    <select name="operation">
+      <option value="+">Add</option>
+      <option value="-">Subtract</option>
+      <option value="*">Multiply</option>
+      <option value="/">Divide</option>
+    </select><br><br>
+
+    <input type="submit" name="calculate" value="Calculate">
+  </form>
+
+  <?php
+  if (isset($_POST['calculate'])) {
+    $n1 = $_POST['num1'];
+    $n2 = $_POST['num2'];
+    $op = $_POST['operation'];
+    $result = 0;
+
+    switch ($op) {
+      case '+': $result = $n1 + $n2; break;
+      case '-': $result = $n1 - $n2; break;
+      case '*': $result = $n1 * $n2; break;
+      case '/':
+        if ($n2 == 0) {
+          echo "<p>Cannot divide by zero.</p>";
+          return;
+        }
+        $result = $n1 / $n2; break;
+      default: echo "<p>Invalid operation.</p>"; return;
+    }
+
+    echo "<h3>Result: $result</h3>";
+  }
+  ?>
+
+</body>
+</html>
+
