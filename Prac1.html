@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Country Capital Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    label, select {
+      font-size: 18px;
+    }
+
+    #capitalDisplay {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #2c3e50;
+      font-family: 'Georgia', serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select a Country</h1>
+
+  <label for="countrySelect">Choose a country:</label>
+  <select id="countrySelect" onchange="showCapital()">
+    <option value="">-- Select --</option>
+    <option value="USA">United States</option>
+    <option value="France">France</option>
+    <option value="Japan">Japan</option>
+    <option value="Brazil">Brazil</option>
+    <option value="India">India</option>
+  </select>
+
+  <div id="capitalDisplay"></div>
+
+  <script>
+    const countryCapitals = {
+      "USA": "Washington, D.C.",
+      "France": "Paris",
+      "Japan": "Tokyo",
+      "Brazil": "Brasília",
+      "India": "New Delhi"
+    };
+
+    function showCapital() {
+      const select = document.getElementById("countrySelect");
+      const selectedCountry = select.value;
+      const capital = countryCapitals[selectedCountry] || "";
+      document.getElementById("capitalDisplay").textContent = capital ? `Capital: ${capital}` : "";
+    }
+  </script>
+</body>
+</html>
