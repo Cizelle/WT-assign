@@ -1,0 +1,57 @@
+<!-- Develop and demonstrate the usage of inline, internal and external style sheet using CSS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Style Sheet Demonstration</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Internal CSS -->
+  <style>
+    .internal-style {
+      background-color: lightblue;
+      color: navy;
+      padding: 10px;
+      font-family: Verdana, sans-serif;
+      border: 2px solid navy;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Styling Methods</h1>
+
+  <!-- Inline CSS -->
+  <div style="background-color: yellow; color: red; padding: 10px; font-family: Arial, sans-serif;">
+    This is styled using <strong>Inline CSS</strong>
+  </div>
+
+  <br>
+
+  <!-- Internal CSS -->
+  <div class="internal-style">
+    This is styled using <strong>Internal CSS</strong>
+  </div>
+
+  <br>
+
+  <!-- External CSS -->
+  <div class="external-style">
+    This is styled using <strong>External CSS</strong>
+  </div>
+
+</body>
+</html>
+
+
+/* External CSS */
+.external-style {
+  background-color: #f0e68c;
+  color: #2e8b57;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  border: 2px dashed #2e8b57;
+}
