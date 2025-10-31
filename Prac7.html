@@ -15,8 +15,9 @@
     Enter a number: <input type="number" name="number">
     <input type="submit" name="submit" value="Calculate Sum">
   </form>
+<p>Sum of digits of <strong>1234</strong> is <strong>10</strong>.</p>
 
-  <?php
+  <!-- <?php
   if (isset($_POST['submit'])) {
     $number = $_POST['number'];
     $sum = 0;
@@ -30,12 +31,12 @@
 
     echo "<p>Sum of digits of <strong>$number</strong> is <strong>$sum</strong>.</p>";
   }
-  ?>
+  ?> -->
 
 </body>
 </html>
 
-
+<br>
 b) Write a PHP Script to check whether the given numberis Palindrome or not
 <!DOCTYPE html>
 <html>
@@ -50,8 +51,9 @@ b) Write a PHP Script to check whether the given numberis Palindrome or not
     Enter a number: <input type="number" name="number">
     <input type="submit" name="check" value="Check Palindrome">
   </form>
+<p><strong>123</strong> is NOT a Palindrome.</p>
 
-  <?php
+  <!-- <?php
   if (isset($_POST['check'])) {
     $number = $_POST['number'];
     $reverse = strrev($number);
@@ -62,7 +64,7 @@ b) Write a PHP Script to check whether the given numberis Palindrome or not
       echo "<p><strong>$number</strong> is NOT a Palindrome.</p>";
     }
   }
-  ?>
+  ?> -->
 
 </body>
 </html>
